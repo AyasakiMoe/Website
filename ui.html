@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Static\mdui-v1.0.1\css\mdui.min.css">
+    <link rel="stylesheet" href="Static\mdui-v1.0.1\css\ui.css">
+    <style>
+
+    </style>
+    <script>
+        /* Navigation bar script, hide when scrolling down, show when scrolling up */
+        // var prevScrollpos = window.pageYOffset;
+        // window.onscroll = function() {
+        //     var currentScrollPos = window.pageYOffset;
+        //     if (prevScrollpos > currentScrollPos) {
+        //         document.getElementsByClassName("topnav")[0].style.top = "0";
+        //     } else {
+        //         document.getElementsByClassName("topnav")[0].style.top = "-50px";
+        //     }
+        //     prevScrollpos = currentScrollPos;
+        // }
+
+    </script>
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-loaded" id="p-d">
+    <div class="home-bodg"></div>
+
+    <div>
+        <!--PC toolbar-->
+        <div class="mdui-hidden-xs-down">
+            <div class="mdui-toolbar mdui-toolbarb">
+                <a href="/index.html">
+                    <div class="mdui-valign">
+                        <img src="Static\Gui\img\Moe.png" width="150px">
+                    </div>
+                </a>
+                <div class="mdui-center font-ui">
+                    <div class="mdui-tab" mdui-tab="">
+                        <a href="./index.html" class="mdui-ripple">
+                            <label>首页/home</label>
+                        </a>
+                        <a href="./project.html" class="mdui-ripple ">
+                            <label>项目/project</label>
+                        </a>
+                        <a href="./staff.html" class="mdui-ripple ">
+                            <label>组员/Staff</label>
+                        </a>
+                        <a href="./news.html" class="mdui-ripple mdui-tab-active">
+                            <label>情报/News</label>
+                        </a>
+                        <a href="./contact.html" class="mdui-ripple ">
+                            <label>联系/contact</label>
+                        </a>
+                    <div class="mdui-tab-indicator"></div></div>
+                </div>
+            </div>
+        </div>
+        <!--mobile toolbar and menu-->
+
+        <div class="mdui-hidden-sm-up">
+            <div class="mdui-toolbar mdui-toolbarm zhe">
+                <a href="/index.html">
+                    <div class="mdui-valign">
+                        <img src="Static\Gui\img\Moe.png" width="120px">
+                    </div>
+                </a>
+                <div class="mdui-toolbar-spacer"></div>
+                <div class="mdui-float-right">
+                    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}">
+                        <i class="mdui-icon material-icons">menu</i>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="mdui-drawer mdui-drawer-right font-ui" id="main-drawer">
+
+                <div class=" mdui-list">
+                    <a href="./index.html" class=" mdui-list-item mdui-ripple ">首页/Home</a>
+                    <a href="./project.html" class=" mdui-list-item mdui-ripple ">项目/Project</a>
+                    <a href="./news.html" class=" mdui-list-item mdui-ripple ">情报/News</a>
+                    <a href="./contact.html" class=" mdui-list-item mdui-ripple ">联系/Contact</a>
+                    <a href="./staff.html" class=" mdui-list-item mdui-ripple ">组员/Staff</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--pc text-->
+    <div class="mdui-hidden-xs-down zhe " style="height:100vh">
+        <div class="mdui-container">
+            <ul class="mdui-list">
+                <li class="mdui-list-item mdui-ripple mdui-shadow-12" style="backdrop-filter: blur(8px);overflow-x:hidden">
+                    <a href="#">
+                        <div class="mdui-list-item-content">
+                            <div class="mdui-list-item-title">暂无内容</div>
+                            <div class="mdui-list-item-text mdui-list-item-one-line">
+                                <span></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!--mobile text-->
+    <div class="mdui-hidden-sm-up zhe " style="height:100%;width: 100%;">
+        <div style="width: 90%;height:100vh" class="mdui-center">
+            <div class="mdui-container">
+                <ul class="mdui-list">
+                    <li class="mdui-list-item mdui-ripple mdui-shadow-12" style="backdrop-filter: blur(8px);overflow-x:hidden">
+                        <a href="#">
+                            <div class="mdui-list-item-content">
+                                <div class="mdui-list-item-title">暂无内容</div>
+                                <div class="mdui-list-item-text mdui-list-item-one-line">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+    
+                </ul>
+            </div>
+            <div class="mdui-typo mdui-valign" style="height:50vh">
+                <div class="mdui-center mdui-text-center">
+                    <p class="s17" style="font-size: 17px;">
+                        AyasakiMoe Studio是AyasakiMoe社区管理组旗下的开发组织。<br>
+
+                        欢迎您的加入!<br>
+
+                        AyasakiMoe:Akatsuki World <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<footer id="copyright">
+    <div class="div-height mdui-valign ">
+        <div class="mdui-typo mdui-center">
+            <div class="font-container " style="font-family:'Saira', 'Noto Sans SC'; font-weight: normal; font-style: normal;">
+                <p>2022-2023 AyasakiMoe Studio</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="Static\mdui-v1.0.1\js\mdui.min.js"></script>
+</body>
+</html>
