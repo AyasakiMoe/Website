@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://lolicon.team/img/images/32.ico">
     <link rel="stylesheet" href="Static\mdui-v1.0.1\css\mdui.min.css">
     <link rel="stylesheet" href="Static\mdui-v1.0.1\css\ui.css">
+    <link rel="stylesheet" href="Static\mdui-v1.0.1\css\animate.min.css">
+    <link rel="stylesheet" href="Static\bootstrap-4.6.2-dist\css\bootstrap.min.css">
     <style>
 
     </style>
@@ -30,22 +33,22 @@
 
     <div>
         <!--PC toolbar-->
-        <div class="mdui-hidden-xs-down">
+        <div class="mdui-hidden-lok-down">
             <div class="mdui-toolbar mdui-toolbarb">
                 <a href="/index.html">
-                    <div class="mdui-valign">
+                    <div class="mdui-valign animate__animated animate__fadeInLeft">
                         <img src="Static\Gui\img\Moe.png" width="150px">
                     </div>
                 </a>
-                <div class="mdui-center font-ui">
+                <div class="mdui-center font-ui animate__animated animate__fadeInDown">
                     <div class="mdui-tab" mdui-tab="">
-                        <a href="./index.html" class="mdui-ripple">
+                        <a href="./index.html" class="mdui-ripple   mdui-tab-active">
                             <label>首页/home</label>
                         </a>
                         <a href="./project.html" class="mdui-ripple ">
                             <label>项目/project</label>
                         </a>
-                        <a href="./staff.html" class="mdui-ripple mdui-tab-active">
+                        <a href="./staff.html" class="mdui-ripple ">
                             <label>组员/Staff</label>
                         </a>
                         <a href="./news.html" class="mdui-ripple ">
@@ -54,22 +57,24 @@
                         <a href="./contact.html" class="mdui-ripple ">
                             <label>联系/contact</label>
                         </a>
-                    <div class="mdui-tab-indicator"></div></div>
+                        <div class="mdui-tab-indicator"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <!--mobile toolbar and menu-->
 
-        <div class="mdui-hidden-sm-up">
+        <div class="mdui-hidden-xm-pe">
             <div class="mdui-toolbar mdui-toolbarm zhe">
                 <a href="/index.html">
-                    <div class="mdui-valign">
+                    <div class="mdui-valign animate__animated animate__fadeInLeft">
                         <img src="Static\Gui\img\Moe.png" width="120px">
                     </div>
                 </a>
                 <div class="mdui-toolbar-spacer"></div>
                 <div class="mdui-float-right">
-                    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}">
+                    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+                        mdui-drawer="{target: '#main-drawer', swipe: true}">
                         <i class="mdui-icon material-icons">menu</i>
                     </span>
                 </div>
@@ -101,8 +106,20 @@
                     <span class="mdui-chip-title">Akatsuki-Misaki</span>
                   </div>
                   <div class="mdui-chip">
-                    <img class="mdui-chip-icon" src="avatar1.jpg"/>
-                    <span class="mdui-chip-title"></span>
+                    <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=3280751036&s=100"/>
+                    <span class="mdui-chip-title">Cheng</span>
+                  </div>
+                  <div class="mdui-chip">
+                    <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=2327680068&s=100"/>
+                    <span class="mdui-chip-title">yuanzhi</span>
+                  </div>
+                  <div class="mdui-chip">
+                    <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=3052013768&s=100"/>
+                    <span class="mdui-chip-title">CcranesQ</span>
+                  </div>
+                  <div class="mdui-chip">
+                    <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=3280751036&s=100"/>
+                    <span class="mdui-chip-title">Cheng</span>
                   </div>
             </ul>
         </div>
@@ -150,6 +167,12 @@
         </div>
     </div>
 </footer>
-<script src="Static\mdui-v1.0.1\js\mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="Static\mdui-v1.0.1\js\mdui.min.js"></script>
+    <script src="Static\mdui-v1.0.1\js\WOW.js"></script>
+    <script src="Static\bootstrap-4.6.2-dist\js\bootstrap.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>

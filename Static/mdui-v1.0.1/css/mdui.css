@@ -5080,6 +5080,7 @@ body.mdui-locked {
     display: none !important;
   }
 }
+
 @media (max-width: 1023.9px) {
   .mdui-hidden-sm-down {
     display: none !important;
