@@ -235,13 +235,13 @@
 
     <script>
         // 3秒后关闭loading动画
-        // $(document).ready(function () {
-        //     $('body').css({overflow: 'hidden'});
-        //     setTimeout(function () {
-        //         $('body').css({overflow: 'auto'});
-        //         $('#loading').fadeOut();
-        //     }, 3000);
-        // });
+        $(document).ready(function () {
+            $('body').css({overflow: 'hidden'});
+            setTimeout(function () {
+                $('body').css({overflow: 'auto'});
+                $('#loading').fadeOut();
+            }, 3000);
+        });
 
 </script>
 </body>
