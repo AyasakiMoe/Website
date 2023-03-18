@@ -112,22 +112,26 @@
     <div class="mdui-hidden-xs-down zhe " style="height:100vh">
         <div class="mdui-container">
             <ul class="mdui-list">
-                <li class="mdui-list-item mdui-ripple mdui-shadow-12 wow animate__animated animate__fadeInRight" style="backdrop-filter: blur(8px);overflow-x:hidden">
-                    <a href="#">
+                <li mdui-dialog="{target: '#example-2'}" class="border-radius-15 mdui-list-item mdui-ripple mdui-shadow-12 wow animate__animated animate__fadeInRight" style="backdrop-filter: blur(8px);overflow-x:hidden">
                         <div class="mdui-list-item-content">
-                            <a href="#">
-                            <div class="mdui-list-item-title">暂无内容</div>
+                            <div class="mdui-list-item-title">宝塔面板主题 | 甘城なつき</div>
                             <div class="mdui-list-item-text mdui-list-item-one-line">
-                                <span>2023-03-13</span>
+                                <span>宝塔面板基础美化包，二次元党狂喜！即将推出动画包！</span>
                             </div>
-                        </a>
                         </div>
                     </a>
                 </li>
-
             </ul>
         </div>
     </div>
+    <div class="mdui-dialog" id="example-2">
+        <div class="mdui-dialog-title">是否要访问?</div>
+        <div class="mdui-dialog-content">宝塔面板主题 | 甘城なつき | 基础美化包.</div>
+        <div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+          <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>Yes Jump Now</button>
+          <button class="mdui-btn mdui-ripple" mdui-dialog-close>No thanks</button>
+        </div>
+      </div>
     <!--mobile text-->
     <div class="mdui-hidden-sm-up zhe " style="height:100%;width: 100%;">
         <div style="width: 90%;height:100vh" class="mdui-center">
@@ -183,10 +187,21 @@
                 $('body').css({overflow: 'auto'});
                 $('#loading').fadeOut(1000);
                 new WOW().init();
+                var inst = new mdui.Dialog(selector, options);
                 callback && callback();
                 clearTimeout(loadTimer);
             }, 500);
         });
+        //example-2 confirm.mdui.dialog触发时执行
+        $('#example-2').on('confirm.mdui.dialog', function () {
+            //新建标签页
+            window.open('https://github.com/hanasaki-misaki/customBT');
+        });
+        
+        
+  
+
+        
     </script>
 </body>
 </html>

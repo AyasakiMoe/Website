@@ -15,7 +15,7 @@ a{
 	left: 0;
 	right: 0;
 	z-index: 10000;
-	background-color: #4d4a4a;
+	background-color: #cacaca;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -94,7 +94,7 @@ a{
     -moz-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(https://img-cdn-cos.lolicon.team/IMAGES/1/2023/03/11/1x640c9526a3570.jpg/wp60);
+    background-image: url(https://img-cdn-cos.lolicon.team/1/2023/03/18/1x6415730a4ec05.webp/all70);
 
     animation: run 60s linear infinite;
     animation-direction: alternate;
@@ -117,7 +117,7 @@ a{
     -moz-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(https://img-cdn-cos.lolicon.team/IMAGES/1/2023/03/11/1x640c9526a3570.jpg/wp60);
+    background-image: url(https://img-cdn-cos.lolicon.team/1/2023/03/18/1x6415730a4ec05.webp/all70);
 
 
 }
@@ -347,12 +347,34 @@ body {
         display: none;
       }
 }
+@media (min-width: 1383px){
+    .slow-tree{
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 490px;
+        margin-left: 15px;
+        margin-bottom: 45px;
+        max-width: 1408px;
+        border: 2px solid #585858;
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+      }
+}
+@media (max-width: 1384px){
+    .slow-tree{
+        display: none;
+      }
+}
 .slow h2{
     padding: 35px 0px 35px 0px;
 }
 .slow-two h2{
     padding: 35px 0px 35px 0px;
 }
+.slow-tree h2{
+    padding: 35px 0px 35px 0px;
+}
+
 
 .dnone{
     display: none;
@@ -370,3 +392,27 @@ body {
 .list-news h3{
     margin-top: 1rem;
 }
+.border-radius-15{
+    border-radius: 15px;
+}
+@media (max-width: 1384px){
+    #player-card{
+        display: none;
+      }
+}
+/* 选中第1个#player-card */
+#player-card:first-child{
+    margin-right: 0px;
+}
+
+#player-card{
+    float:right;
+    margin-right: 32px;
+}
+
+/* 选中最后一个#player-card */
+
+#player-card:last-child{
+    margin-left: 15px;
+}
+
