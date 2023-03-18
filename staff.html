@@ -36,11 +36,11 @@
         <div class="mdui-hidden-lok-down">
             <div class="mdui-toolbar mdui-toolbarb">
                 <a href="/index.html">
-                    <div class="mdui-valign animate__animated animate__fadeInLeft">
+                    <div class="wow mdui-valign animate__animated animate__fadeInLeft">
                         <img src="Static\Gui\img\Moe.png" width="150px">
                     </div>
                 </a>
-                <div class="mdui-center font-ui animate__animated animate__fadeInDown">
+                <div class="wow mdui-center font-ui animate__animated animate__fadeInDown">
                     <div class="mdui-tab" mdui-tab="">
                         <a href="./index.html" class="mdui-ripple">
                             <label>首页/home</label>
@@ -137,27 +137,27 @@
         <div style="width: 90%;height:100vh" class="mdui-center">
             <div class="mdui-container">
                 <div style="margin-left:-(width/2)">
-                    <div class="mdui-chip wow animate__animated animate__fadeInRight " data-wow-delay="200ms">
-                        <img class="mdui-chip-icon" src="https://avatars.githubusercontent.com/u/125862745?v=4"/>
+                    <div class="idc mdui-chip " data-wow-delay="200ms">
+                        <img class="idc mdui-chip-icon" src="https://avatars.githubusercontent.com/u/125862745?v=4"/>
                         <span class="mdui-chip-title">Akatsuki-Misaki</span>
                       </div>
-                      <div class="mdui-chip wow animate__animated animate__fadeInRight " data-wow-delay="300ms">
+                      <div class="idc mdui-chip " data-wow-delay="300ms">
                         <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=3280751036&s=100"/>
                         <span class="mdui-chip-title">Cheng</span>
                       </div>
-                      <div class="mdui-chip wow animate__animated animate__fadeInRight " data-wow-delay="400ms">
+                      <div class="idc mdui-chip " data-wow-delay="400ms">
                         <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=2327680068&s=100"/>
                         <span class="mdui-chip-title">yuanzhi</span>
                       </div>
-                      <div class="mdui-chip wow animate__animated animate__fadeInRight " data-wow-delay="500ms">
+                      <div class="idc mdui-chip " data-wow-delay="500ms">
                         <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=3052013768&s=100"/>
                         <span class="mdui-chip-title">CcranesQ</span>
                       </div>
-                      <div class="mdui-chip wow animate__animated animate__fadeInRight " data-wow-delay="600ms">
+                      <div class="idc mdui-chip " data-wow-delay="600ms">
                         <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=2274889340&s=100"/>
                         <span class="mdui-chip-title">xing_cheng</span>
                       </div>
-                      <div class="mdui-chip wow animate__animated animate__fadeInRight " data-wow-delay="700ms">
+                      <div class="idc mdui-chip" data-wow-delay="700ms">
                         <img class="mdui-chip-icon" src="https://q1.qlogo.cn/g?b=qq&nk=1345708097&s=100"/>
                         <span class="mdui-chip-title">yun_luo</span>
                       </div>
@@ -192,8 +192,15 @@
     <script src="Static\mdui-v1.0.1\js\wow.min.js" type="text/javascript"></script>
     <script src="Static\bootstrap-4.6.2-dist\js\bootstrap.min.js" type="text/javascript"></script>
     <script>
-        // 初始化 WOW.js
-        new WOW().init();
+        $(window).on('load', function {
+            $('body').css({overflow: 'hidden'});
+            setTimeout(function () {
+                $('body').css({overflow: 'auto'});
+                $('#loadprogress').hide();
+                new WOW().init();
+                $('.idc').addClass('wow animate__animated animate__fadeInRight');
+            });
+        });
     </script>
 </body>
 </html>

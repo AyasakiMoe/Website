@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="Static\mdui-v1.0.1\css\animate.min.css">
     <link rel="stylesheet" href="Static\bootstrap-4.6.2-dist\css\bootstrap.min.css">
     <style>
-
+        
     </style>
 </head>
 
 <body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-loaded" id="p-d">
     <!-- loading start -->
     <div id="loading">
-        <span></span>
+        <span>
+            <img src="Static\Gui\img\Moe.png"/>
+        </span>
     </div>
     <!-- loading end -->
     <div class="home-bodg"></div>
@@ -27,16 +29,13 @@
     <div>
         <!--PC toolbar-->
         <div class="mdui-hidden-lok-down">
-            <div class="mdui-progress">
-                <div class="mdui-progress-indeterminate"></div>
-              </div>
             <div class="mdui-toolbar mdui-toolbarb">
                 <a href="/index.html">
-                    <div class="mdui-valign animate__animated animate__fadeInLeft">
+                    <div class="wow mdui-valign animate__animated animate__fadeInLeft">
                         <img src="Static\Gui\img\Moe.png" width="150px">
                     </div>
                 </a>
-                <div class="mdui-center font-ui animate__animated animate__fadeInDown">
+                <div class="wow mdui-center font-ui animate__animated animate__fadeInDown">
                     <div class="mdui-tab" mdui-tab="">
                         <a href="./index.html" class="mdui-ripple   mdui-tab-active">
                             <label>首页/home</label>
@@ -99,7 +98,7 @@
     <!--pc text-->
     <div class="mdui-hidden-xs-down zhe " style="height:200vh">
         <div class="mdui-container">
-            <div id="carouselExampleCaptions" class="carousel slide banner animate__animated animate__fadeInRight" data-ride="carousel">
+            <div id="carouselExampleCaptions" class="wow carousel slide banner animate__animated animate__fadeInRight" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -228,21 +227,21 @@
     <script src="Static\mdui-v1.0.1\js\mdui.min.js" type="text/javascript"></script>
     <script src="Static\mdui-v1.0.1\js\wow.min.js" type="text/javascript"></script>
     <script src="Static\bootstrap-4.6.2-dist\js\bootstrap.min.js" type="text/javascript"></script>
-    <script>
-        // 初始化 WOW.js
-        new WOW().init();
-    </script>
+
 
     <script>
-        // 3秒后关闭loading动画
-        $(document).ready(function () {
+        // 网页资源加载完成等待2s后关闭id类为loading动画
+        $(window).on('load', function (callback)  {
             $('body').css({overflow: 'hidden'});
+            $('body').removeClass('wow-animate__animated');
             setTimeout(function () {
                 $('body').css({overflow: 'auto'});
-                $('#loading').fadeOut();
-            }, 3000);
+                $('#loading').fadeOut(1000);
+                new WOW().init();
+                callback && callback();
+                clearTimeout(loadTimer);
+            }, 2000);
         });
-
 </script>
 </body>
 

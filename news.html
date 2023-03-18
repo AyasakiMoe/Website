@@ -34,13 +34,16 @@
     <div>
         <!--PC toolbar-->
         <div class="mdui-hidden-lok-down">
+            <div class="mdui-progress" id="loadprogress">
+                <div class="mdui-progress-indeterminate"></div>
+              </div>
             <div class="mdui-toolbar mdui-toolbarb">
                 <a href="/index.html">
-                    <div class="mdui-valign animate__animated animate__fadeInLeft">
+                    <div class="wow mdui-valign animate__animated animate__fadeInLeft">
                         <img src="Static\Gui\img\Moe.png" width="150px">
                     </div>
                 </a>
-                <div class="mdui-center font-ui animate__animated animate__fadeInDown">
+                <div class="wow mdui-center font-ui animate__animated animate__fadeInDown">
                     <div class="mdui-tab" mdui-tab="">
                         <a href="./index.html" class="mdui-rippl">
                             <label>首页/home</label>
@@ -105,18 +108,7 @@
     <div class="mdui-hidden-xs-down zhe " style="height:100vh">
         <div class="mdui-container">
             <ul class="mdui-list">
-                <li class="mdui-list-item mdui-ripple mdui-shadow-12 wow animate__animated animate__fadeInRight" style="backdrop-filter: blur(8px);overflow-x:hidden">
-                    <a href="#">
-                        <div class="mdui-list-item-content">
-                            <a href="#">
-                            <div class="mdui-list-item-title">暂无内容</div>
-                            <div class="mdui-list-item-text mdui-list-item-one-line">
-                                <span>2023-03-13</span>
-                            </div>
-                        </a>
-                        </div>
-                    </a>
-                </li>
+                
 
             </ul>
         </div>
@@ -165,13 +157,29 @@
     </div>
 </footer>
 <script src="https://npm.akass.cn/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="Static\Gui\js\new_Rss.js" type="text/javascript"></script>
     <script src="Static\mdui-v1.0.1\js\wow.js" type="text/javascript"></script>
     <script src="Static\mdui-v1.0.1\js\mdui.min.js" type="text/javascript"></script>
     <script src="Static\mdui-v1.0.1\js\wow.min.js" type="text/javascript"></script>
     <script src="Static\bootstrap-4.6.2-dist\js\bootstrap.min.js" type="text/javascript"></script>
     <script>
-        // 初始化 WOW.js
-        new WOW().init();
+        // 未加载完成网页资源前需要阻止所有动画效果网页资源加载完成后隐藏div id类为loadprogress的元素
+        $(window).on('load', function (callback)  {
+            $('body').css({overflow: 'hidden'});
+            $('body').removeClass('wow-animate__animated');
+            setTimeout(function () {
+                $('body').css({overflow: 'auto'});
+                $('#loadprogress').hide();
+                new_Rss();
+                new WOW().init();
+                callback && callback();
+                clearTimeout(loadTimer);
+            }, 2000);
+        });
+        // 加载完成后再运行new_Rss.js
+
+
     </script>
+    
 </body>
 </html>
