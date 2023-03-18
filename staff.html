@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="Static\mdui-v1.0.1\css\ui.css">
     <link rel="stylesheet" href="Static\mdui-v1.0.1\css\animate.min.css">
     <link rel="stylesheet" href="Static\bootstrap-4.6.2-dist\css\bootstrap.min.css">
-    <style>
-        body{
-            overflow:hidden;
-        }
-    </style>
 </head>
 <body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-loaded" id="p-d">
+    <!-- loading start -->
+    <div id="loading">
+        <span>
+            <img src="Static\Gui\img\Moe.png"/>
+        </span>
+    </div>
+    <!-- loading end -->
     <div class="home-bodg"></div>
-
     <div>
         <!--PC toolbar-->
         <div class="mdui-hidden-lok-down">
@@ -181,11 +182,19 @@
     <script src="Static\bootstrap-4.6.2-dist\js\bootstrap.min.js" type="text/javascript"></script>
     <script>
         // 网页完成前阻止滚动条网页加载完成后恢复滚动条
-        $(document).ready(function () {
-            $("body").css("overflow", "auto");
+        // 网页资源加载完成等待500ms后关闭id类为loading动画
+        $(window).on('load', function (callback)  {
+            $('body').css({overflow: 'hidden'});
+            $('body').removeClass('wow-animate__animated');
             $('.idc').removeClass('dnone');
             $('.idc').addClass('wow animate__animated animate__fadeInRight');
-            new WOW().init();
+            setTimeout(function () {
+                $('body').css({overflow: 'auto'});
+                $('#loading').fadeOut(1000);
+                new WOW().init();
+                callback && callback();
+                clearTimeout(loadTimer);
+            }, 500);
         });
     </script>
 </body>

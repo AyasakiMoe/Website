@@ -230,7 +230,7 @@
 
 
     <script>
-        // 网页资源加载完成等待2s后关闭id类为loading动画
+        // 网页资源加载完成等待500ms后关闭id类为loading动画
         $(window).on('load', function (callback)  {
             $('body').css({overflow: 'hidden'});
             $('body').removeClass('wow-animate__animated');
@@ -240,7 +240,7 @@
                 new WOW().init();
                 callback && callback();
                 clearTimeout(loadTimer);
-            }, 2000);
+            }, 5000);
         });
 </script>
 </body>

@@ -19,12 +19,13 @@ function getRSS(url) {
           console.log(title, link);
           //在news.html页面上的ul元素中添加内容
             document.querySelector("ul").innerHTML += `
-            <a href="${link}" target="_blank">
-            <li class="idc dnone mdui-list-item mdui-ripple mdui-shadow-12" style="backdrop-filter: blur(8px);overflow-x:hidden">
-                <div class="mdui-list-item-title">${title}</div>
-                            <div class="mdui-list-item-text mdui-list-item-one-line">
-                                <span>${datetime}</span>
-                     </div>
+            
+            <li class="list-news idc dnone mdui-list-item mdui-ripple mdui-shadow-12" style="backdrop-filter: blur(8px);overflow-x:hidden;padding-top: 14px;padding-bottom: 14px;">
+              <a href="${link}" target="_blank">
+                    <div class="mdui-list-item-title">${title}</div>
+                        <div class="mdui-list-item-text mdui-list-item-one-line">
+                          <span>${datetime}</span>
+                    </div>
                 </a>
             </li>
             `;

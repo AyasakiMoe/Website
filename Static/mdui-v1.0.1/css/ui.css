@@ -357,3 +357,6 @@ body {
 .dnone{
     display: none;
 }
+.list-news{
+    border-radius: 15px;
+}
