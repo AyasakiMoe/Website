@@ -28,6 +28,12 @@ function getRSS(url) {
                 </a>
             </li>
             `;
+            // 完成后删除li中class类中的dnone
+            document.querySelector("li").classList.remove("dnone");
+            //添加li标签里的class类 wow animate__animated animate__fadeInRight
+            document.querySelector("li").classList.add("wow", "animate__animated", "animate__fadeInRight");
+            //删除id 为loadprogress的元素
+            document.getElementById("loadprogress").remove();
           //若是没有的item元素，则在页面li添加没有内容”
           if (items.length === 0) {
             document.querySelector("ul").innerHTML += `
@@ -38,7 +44,11 @@ function getRSS(url) {
           }
         });
       });
+      
+      
   }
   
   //调用函数，传入rss文件的url（这里是一个示例）
-  getRSS("http://www.mikumo.top/?feed=rss2");
+  getRSS("https://rss.lolicon.team/?feed=rss2");
+
+

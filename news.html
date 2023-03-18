@@ -165,14 +165,12 @@
     <script src="Static\mdui-v1.0.1\js\wow.min.js" type="text/javascript"></script>
     <script src="Static\bootstrap-4.6.2-dist\js\bootstrap.min.js" type="text/javascript"></script>
     <script>
-        new WOW().init();
-        setTimeout(function () {
-            $("body").css("overflow", "auto");
-            $('#loadprogress').hide();
-            $('.idc').removeClass('dnone');
-            $('.idc').addClass('wow animate__animated animate__fadeInRight');
-        }, 3000);
-    </script>
+        // 页面加载完成后执行
+        $(function () {
+            // 初始化 wow.js
+            new WOW().init();
+        });
+</script>
     
 </body>
 </html>
