@@ -183,9 +183,8 @@
     <script>
         // 网页完成前阻止滚动条网页加载完成后恢复滚动条
         // 网页资源加载完成等待500ms后关闭id类为loading动画
+        $('body').css({overflow: 'hidden'});
         $(window).on('load', function (callback)  {
-            $('body').css({overflow: 'hidden'});
-            $('body').removeClass('wow-animate__animated');
             $('.idc').removeClass('dnone');
             $('.idc').addClass('wow animate__animated animate__fadeInRight');
             setTimeout(function () {

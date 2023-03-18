@@ -271,16 +271,15 @@
 
     <script>
         // 网页资源加载完成等待500ms后关闭id类为loading动画
+        $('body').css({overflow: 'hidden'});
         $(window).on('load', function (callback)  {
-            $('body').css({overflow: 'hidden'});
-            $('body').removeClass('wow-animate__animated');
             setTimeout(function () {
                 $('body').css({overflow: 'auto'});
                 $('#loading').fadeOut(1000);
                 new WOW().init();
                 callback && callback();
                 clearTimeout(loadTimer);
-            }, 500);
+            }, 1000);
         });
 </script>
 </body>
