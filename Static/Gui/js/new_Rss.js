@@ -20,7 +20,7 @@ function getRSS(url) {
           //在news.html页面上的ul元素中添加内容
             document.querySelector("ul").innerHTML += `
             <a href="${link}" target="_blank">
-            <li class="mdui-list-item mdui-ripple mdui-shadow-12 wow animate__animated animate__fadeInRight" style="backdrop-filter: blur(8px);overflow-x:hidden">
+            <li class="idc dnone mdui-list-item mdui-ripple mdui-shadow-12" style="backdrop-filter: blur(8px);overflow-x:hidden">
                 <div class="mdui-list-item-title">${title}</div>
                             <div class="mdui-list-item-text mdui-list-item-one-line">
                                 <span>${datetime}</span>
@@ -28,10 +28,10 @@ function getRSS(url) {
                 </a>
             </li>
             `;
-          //若是没有更多的item元素，则在页面添加没有内容”
+          //若是没有的item元素，则在页面li添加没有内容”
           if (items.length === 0) {
             document.querySelector("ul").innerHTML += `
-            <li class="mdui-list-item mdui-ripple mdui-shadow-12 wow animate__animated animate__fadeInRight" style="backdrop-filter: blur(8px);overflow-x:hidden">
+            <li class="idc dnone mdui-list-item mdui-ripple mdui-shadow-12" style="backdrop-filter: blur(8px);overflow-x:hidden">
                 <div class="mdui-list-item-title">没有内容</div>
             </li>
             `;

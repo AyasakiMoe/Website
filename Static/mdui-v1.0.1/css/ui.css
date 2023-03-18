@@ -353,3 +353,7 @@ body {
 .slow-two h2{
     padding: 35px 0px 35px 0px;
 }
+
+.dnone{
+    display: none;
+}
