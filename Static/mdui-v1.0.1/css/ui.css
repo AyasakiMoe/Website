@@ -393,3 +393,10 @@ body {
     border-radius: 15px;
     backdrop-filter: blur(5px);
 }
+/* 载入字体url */
+@font-face {
+    font-family: 'Saira';
+    src: url('https://fonts.akass.cn/saira/v14/files/saira-latin-regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
