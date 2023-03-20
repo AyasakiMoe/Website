@@ -1,3 +1,5 @@
+@import 'owl.carousel.css';
+
 /* 去除左右滚动 */
 body{
     overflow-x:hidden!important;
@@ -400,26 +402,16 @@ body {
     font-weight: normal;
     font-style: normal;
 }
-.single_slide .slide_text h2 {
-    font-size: 50px;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: #34495e;
-    letter-spacing: 2px;
-    font-family: 'Open Sans', sans-serif;
-    margin-bottom: 30px;
+/* *************************
+:: 2.0 Common CSS
+************************* */
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.single_slide .slide_text h2 > span {
-    color: #3f51b5;
-}
 
-.single_slide .slide_text h3 {
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: #354b60;
-}
 .table {
     display: table;
     z-index: 9;
@@ -433,10 +425,41 @@ body {
     vertical-align: middle;
 }
 
+
+.section_heading {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.section_heading > h3 {
+    color: #3f51b5;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.section_heading > p {
+    color: #888;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+
 /* ******************************
 :: 5.0 slider area css
 ****************************** */
 
+.welcome_area {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
 
 .single_slide {
     position: relative;
@@ -452,7 +475,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     content: "";
 }
 
@@ -478,4 +501,90 @@ body {
 
 .single_slide .slide_text h2 > span {
     color: #3f51b5;
+}
+
+.single_slide .slide_text h3 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #354b60;
+}
+
+.single_slide .slide_text a {
+    background-color: #354b60;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 50px auto 0;
+    overflow: hidden;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    width: 180px;
+}
+
+.single_slide .slide_text a:hover {
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+.single_slide .slide_text .table .table_cell {
+    padding-top: 5%;
+}
+
+.welcome_area .welcome_slides .owl-nav {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
+}
+
+.welcome_area .welcome_slides .owl-nav .owl-prev,
+.welcome_area .welcome_slides .owl-nav .owl-next {
+    background-color: #fff;
+    color: #3f51b5;
+    cursor: pointer;
+    font-weight: 400;
+    height: 40px;
+    position: absolute;
+    text-align: center;
+    top: -20px;
+    -webkit-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s;
+    width: 40px;
+    z-index: 999;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.welcome_area .welcome_slides .owl-nav .owl-prev {
+    left: -35px;
+}
+
+.welcome_area .welcome_slides .owl-nav .owl-next {
+    right: -35px;
+}
+
+.welcome_area .welcome_slides .owl-nav .owl-prev:hover,
+.welcome_area .welcome_slides .owl-nav .owl-next:hover {
+    background-color: #3f51b5;
+    color: #fff
+}
+
+.welcome_area .welcome_slides:hover .owl-nav .owl-prev {
+    left: 15px;
+}
+
+.welcome_area .welcome_slides:hover .owl-nav .owl-next {
+    right: 15px;
+}
+
+.welcome_area .welcome_slides .owl-nav .owl-prev > i,
+.welcome_area .welcome_slides .owl-nav .owl-next > i {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
 }
