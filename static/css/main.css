@@ -1,0 +1,533 @@
+:root {
+    --color-light: #6ed9ff;    
+    --color-soft: #aadfff;     
+    --color-main: #1cb5f9;     
+    --color-dark: #0d2f54;     
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑", Arial, sans-serif;
+    color: var(--color-dark);
+    overflow: hidden; /* PC端隐藏滚动条 */
+}
+
+#section-bg{
+    background: #f9f9f9 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAFVJREFUSEtjfPn+238GJMDBxozMJZn949dfuB5GkOHiglyMJJtChIYhbPjHrz//83Oz0yZYRg3HlngYR4NlNFiIKFUgSkZTC9agGg0W7MEyWs1hCxcAF5pe5Ya82ZoAAAAASUVORK5CYII=) repeat center center/1rem 1rem;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* PC端全屏滚动布局 */
+.pc-container {
+    display: block;
+    height: 100vh;
+    transition: transform 0.6s ease; /* 页面切换过渡 */
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 首页（第一页） */
+.section-1 {
+    background: linear-gradient(rgba(13, 47, 84, 0.3), rgba(13, 47, 84, 0.3)), url('https://img-bohe.lolicon.team/i/img/img-cdn/Background-pc.webp');
+    background-size: cover;
+}
+/* 首页logo渐入/渐出动画 */
+.section-1 .logo {
+    opacity: 0; /* 初始透明状态 */
+    transform: translateY(20px); /* 初始向下偏移20px */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* 调整过渡时间与页面滚动一致 */
+}
+.section-1 .logo.active {
+    opacity: 1; /* 直接设置最终状态（替代原animation） */
+    transform: translateY(0);
+}
+.Slogans{
+    width: 50vh;
+}
+
+
+/* 第二页（角色页） */
+/* 第二页（角色页）优化 */
+
+.section-2 {
+    justify-content: flex-start; /* 内容整体左对齐 */
+}
+.role-container {
+    width: 100%; 
+    text-align: left;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+    display: flex; 
+    justify-content: space-between; /* 关键修改：左右贴边对齐 */
+    gap: 0; /* 移除原有间距 */
+}
+
+.role-images-container {
+    flex-shrink: 0; 
+    width: 48%; /* 左侧固定宽度 */
+    margin-left: 2%;
+}
+
+.role-info-container {
+    flex-shrink: 0; /* 关键修改：右侧不收缩 */
+    width: 580px; /* 右侧固定宽度（可根据实际需求调整） */
+    margin-right: 2%; /* 右侧留出间距 */
+    opacity: 0;  /* 初始透明度 */
+    transform: translateX(50px);  /* 初始右侧偏移50px */
+    transition: all 0.8s ease;  /* 过渡动画 */
+}
+
+.role-container.active .role-info-container {
+    opacity: 1;  /* 激活后完全显示 */
+    transform: translateX(0);  /* 回到原位置 */
+}
+.info-roleDesc{
+    margin-right: 1em;
+}
+
+.role-right-info{
+    /* 容器在屏幕水平居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* 确保容器占据整个视口高度 */
+}
+.role-container.active {
+    opacity: 1;
+    transform: translateX(0); /* 最终位置 */
+}
+
+/* 横向图左侧固定布局 */
+.role-images {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: center;
+}
+.role-images img:first-child { /* 横向透明图 */
+    max-width: 500px; /* 固定宽度 */
+    flex-shrink: 0; /* 防止被压缩 */
+}
+.role-images img:last-child { /* 竖向图 */
+    max-width: 100%; /* 调整适配左侧布局 */
+}
+.role-images img {
+    max-width: 450px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(13,47,84,0.15);
+    transition: transform 0.3s ease;
+}
+
+.role-btn-margin-bottom{
+    margin-bottom: 10px;
+}
+
+.role-btn {
+    padding: 12px 30px;
+    margin: 0 10px;
+    background: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    /* 间隔1em 不使用margin */
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(13,47,84,0.2);
+    outline: none;
+    /* 按钮居中 */
+    margin: 0 auto;
+    /* 按钮宽度 */
+    width: 200px;
+    /* 按钮高度 */
+    height: 50px;
+    /* 按钮圆角 */
+    border-radius: 25px;
+    /* 按钮背景颜色 */
+    background: var(--color-main);
+    /* 按钮文字颜色 */
+    color: white;
+    /* 按钮文字大小 */
+    font-size: 1.2rem;
+    /* 按钮文字加粗 */
+    font-weight: bold;
+}
+.role-btn:hover {
+    background: var(--color-dark);
+}
+
+/* 导航点（右侧） */
+.scroll-dots {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+.scroll-dots .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.scroll-dots .dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* 手机端单页布局 */
+.mobile-container {
+    display: none;
+    padding: 20px;
+    overflow-y: auto; /* 允许滚动 */
+    height: 100vh;
+}
+@media (max-width: 780px) {
+    body {
+        overflow: auto; /* 手机端允许内容滚动 */
+    }
+    .pc-container {
+        display: none;
+    }
+    .mobile-container {
+        display: block;
+        background: linear-gradient(rgba(13, 47, 84, 0.2), rgba(13, 47, 84, 0.2)), url('https://static-cos.ovofish.com/static/miraipip/img/Background-pe.webp');
+        background-size: cover;
+    }
+    .role-images {
+        flex-direction: column;
+    }
+    .role-images img {
+        max-width: 100%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 40px 30px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 30px rgba(13, 47, 84, 0.1); /* 添加卡片阴影 */
+    animation: fadeIn 0.8s ease-out; /* 内容渐入动画 */
+}
+
+.vtuber-images {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* 图片间距 */
+}
+
+.vtuber-images img {
+    max-width: 48%; /* 横向图和竖向图并排显示 */
+    height: auto;
+    margin: 0;
+    border-radius: 10px;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease; /* 悬停过渡 */
+}
+
+.vtuber-images img:hover {
+    transform: translateY(-10px) scale(1.02); /* 悬停放大+上移 */
+}
+
+.vtuber-images img:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+h1 {
+    color: var(--color-main);
+    border-bottom: 4px solid var(--color-soft);
+    padding-bottom: 8px;
+    font-size: 2.2rem;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* 新增渐入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 保留原有悬浮动画 */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* 新增：角色信息元素的透明度过渡 */
+#roleName, 
+#roleHorizontal, 
+.info-roleDesc {
+    transition: opacity 0.3s ease;  /* 0.3秒透明度过渡 */
+}
+
+
+/* 新增顶部导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 15px rgba(13, 47, 84, 0.1);
+    z-index: 1001; /* 高于导航点的z-index:100 */
+    opacity: 1;  /* 默认显示状态 */
+    visibility: visible;  /* 默认可见 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;  /* 透明度和可见性过渡 */
+}
+.navbar.hidden {
+    opacity: 0;  /* 隐藏时透明度0 */
+    visibility: hidden;  /* 隐藏时不可见 */
+    /* 移除display: none，避免打断过渡动画 */
+}
+.navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-logo {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    font-weight: bold;
+}
+.login-btn {
+    color: var(--color-main);
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 2px solid var(--color-main);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.login-btn:hover {
+    background: var(--color-main);
+    color: white;
+}
+
+/* 手机端导航栏适配 */
+@media (max-width: 780px) {
+    .navbar {
+        display: none; /* 手机端不显示PC导航栏 */
+    }
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.news-loading {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 20px 0;
+}
+
+/* 新闻项初始状态（未激活时） */
+.news-item {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(13, 47, 84, 0.05);
+    opacity: 0;           /* 初始透明 */
+    transform: translateX(50px); /* 初始右侧偏移50px */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 过渡动画 */
+}
+
+/* 新闻项激活状态（进入时） */
+.news-item.active {
+    opacity: 1;           /* 完全显示 */
+    transform: translateX(0); /* 回到原位置 */
+}
+
+.news-item h3 {
+    color: var(--color-main);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.news-item p {
+    color: var(--color-dark);
+    line-height: 1.6;
+    width: 100%; /* 覆盖全局p标签的宽度限制 */
+    margin: 0;
+    font-size: 1rem;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+    color: var(--color-dark);
+    text-decoration: underline;
+}
+
+/* 第二页STAFF装饰图样式 */
+.section-2 {
+    position: relative; /* 作为绝对定位的参考容器 */
+}
+
+.staff-decoration {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    z-index: 0;  /* 确保在容器最下层（需根据实际内容调整z-index） */
+    max-width: 250px; /* 控制图片最大宽度 */
+    opacity: 0;        /* 初始隐藏 */
+    transform: translateX(50%); /* 初始向右偏移50% */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 过渡动画 */
+}
+
+.staff-decoration.active {
+    opacity: 1;         /* 完全显示 */
+    transform: translateX(0); /* 回到原始位置 */
+}
+
+/* 第三页新闻装饰图样式 */
+.section-3 {
+    position: relative; /* 作为绝对定位的参考容器 */
+}
+
+.news-decoration {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    z-index: 0;
+    max-width: 250px;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: opacity 1s ease, transform 1s ease; /* 从0.5s延长至1s */
+}
+
+.news-decoration.active {
+    opacity: 1;         /* 完全显示 */
+    transform: translateX(0); /* 回到原始位置 */
+}
+
+/* 角色名称链接样式 */
+#roleName a {
+    color: var(--color-main); /* 使用主题色 */
+    text-decoration: none; /* 移除默认下划线 */
+    border-bottom: 2px solid transparent; /* 初始透明下划线 */
+    transition: border-bottom 0.3s ease; /* 下划线过渡动画 */
+}
+#roleName a:hover {
+    border-bottom: 2px solid var(--color-main); /* 悬停下划线 */
+}
+
+/* GitHub链接样式 */
+.role-url a {
+    color: var(--color-dark); /* 深色调 */
+    font-size: 1.1rem; /* 字体大小 */
+    font-weight: 500; /* 中等字重 */
+    text-decoration: none; /* 移除下划线 */
+    transition: color 0.3s ease; /* 颜色过渡 */
+}
+.role-url a:hover {
+    color: var(--color-main); /* 悬停时主题色 */
+    text-decoration: underline; /* 悬停下划线 */
+}
+
+/* 新增页脚样式 */
+.footer {
+    /* 原页脚样式 */
+    background: #f5f5f5; /* 浅灰色背景 */
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666; /* 柔和文字颜色 */
+    margin-top: 30px; /* 与上方内容保持间距 */
+    /* 新增固定定位样式 */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98); /* 与顶部菜单背景一致 */
+    box-shadow: 0 -2px 15px rgba(13, 47, 84, 0.1); /* 顶部阴影（与导航栏相反方向） */
+    z-index: 1000; /* 与导航栏z-index保持同级 */
+    margin-top: 0; /* 移除原有margin-top */
+    opacity: 0;          /* 默认隐藏 */
+    visibility: hidden; /* 隐藏时不可见 */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* 过渡动画 */
+    display: flex;          /* 启用弹性布局 */
+    justify-content: flex-start; /* 关键修改：内容左对齐 */
+    align-items: center; /* 保持垂直居中 */
+    padding-left: 20px; /* 新增：左侧内边距，避免内容紧贴屏幕边缘 */
+    align-items: center;    /* 内容垂直居中 */
+    gap: 10px;              /* 图片与文字间的间距 */
+}
+/* 如果页脚包含图片，添加图片样式控制 */
+.footer img {
+    height: 1.2em;          /* 图片高度与文字行高匹配 */
+    vertical-align: middle; /* 垂直居中（备用方案） */
+}
+.footer.active {
+    opacity: 1;          /* 显示时完全不透明 */
+    visibility: visible; /* 显示时可见 */
+}
+
+/* 调整主内容容器底部边距（避免被页脚遮挡） */
+.pc-container,
+.mobile-container {
+    padding-bottom: 60px; /* 根据页脚高度调整（当前页脚高度约60px） */
+    box-sizing: border-box;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+    .pc-container,
+    .mobile-container {
+        padding-bottom: 40px; /* 手机端页脚高度调整 */
+    }
+}
+
