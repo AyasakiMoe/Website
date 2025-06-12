@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>花崎未咲的小屋</title>
+    <title>FRAISEMOE-Addons-Installer</title>
+    <link rel="stylesheet" href="/static/css/loading.css">
     <link rel="shortcut icon" href="https://static-cos.ovofish.com/static/miraipip/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/loading.css">
-</head>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://static-cos.ovofish.com/static/nekopara/img/bg.webp') no-repeat center center/cover;
+            z-index: -1;
+        }
+
+        .download-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            min-width: 480px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .download-link {
+            display: block;
+            padding: 12px 20px;
+            margin: 15px 0;
+            background-color: #f8f9fa;
+            color: #1a73e8;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: 1px solid #dadce0;
+            font-weight: 500;
+        }
+
+        .download-link:hover {
+            background-color: #e3f2fd;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #version_info {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #f1f8e9;
+            border-radius: 6px;
+            color: #33691e;
+            font-size: 14px;
+        }
+
+        .error {
+            background-color: #ffebee !important;
+            color: #c62828 !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
 <body>
     <div id="loading">
         <div id="boxlogo" class="fl">
@@ -23,99 +96,84 @@
             </div>
         </div>
     </div>
-    <!-- 顶部导航栏 -->
-    <nav class="navbar hidden">
-        <div class="navbar-content">
-            <div class="navbar-logo">花崎未咲的小屋</div>
-            <div class="navbar-actions">
-                <a href="/ts3" class="login-btn">TEAMSPEAK</a>
-                <a href="/nekopara" class="login-btn">NEKOPARA</a>
-            </div>
-        </div>
-    </nav>
-    <!-- PC端全屏滚动结构 -->
-    <div class="pc-container" id="pcContainer">
-        <!-- 第一页：首页 -->
-        <div class="section section-1">
-            <div class="logo">
-                <img class="Slogans" src="https://archive.ovofish.com/var/ui/custom/img/decras.png" alt="Akatsuki">
-            </div>
-        </div>
+    <div class="background-layer"></div>
 
-        <!-- 第二页：角色介绍 -->
-        <div id="section-bg" class="section section-2">
-            <!-- 添加STAFF装饰图（最下层） -->
-            <img src="https://static-cos.ovofish.com/static/miraipip/img/decoration.b18931.png" alt="STAFF装饰"
-                id="staffDecoration" class="staff-decoration">
-            <div class="role-container" id="roleContainer">
-                <!-- 左侧图片容器 -->
-                <div class="role-images-container">
-                    <h1 id="roleName">Akatsuki Misaki</h1> <!-- 角色名将位于左侧 -->
-                    <div class="role-images">
-                        <img src="https://static-cos.ovofish.com/static/miraipip/img/XCDK1893.jpg" alt="横向形象"
-                            id="roleHorizontal">
-                    </div>
-                    <div class="role-url">
-                        <a href="https://github.com/akatsuki-misaki" target="_blank">GITHUB.COM/Akatsuki-Misaki</a>
-                    </div>
-                </div>
-
-                <!-- 右侧信息容器 -->
-                <div class="role-info-container">
-                    <div class="role-right-info">
-                        <p class="info-roleDesc" id="roleDesc">本站主要运营者，负责网站的运营管理，负责绝大部分功能组件开发，隶属于某个神秘组织，提供图片托管服务，助力萌新站长。
-                        </p> <!-- 描述将位于右侧 -->
-                        <div class="role-btns">
-                            <div class="role-btn-margin-bottom">
-                                <button class="role-btn" data-role="default">赤月未咲</button>
-                            </div>
-                            <div class="role-btn-margin-bottom">
-                                <button class="role-btn" data-role="costume">Yanam1Anna</button>
-                            </div>
-                            <div class="role-btn-margin-bottom">
-                                <button class="role-btn" data-role="holiday">LiSHang999</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 第三页：新闻页 -->
-        <div id="section-bg" class="section section-3">
-            <!-- 添加新闻页装饰图（最下层） -->
-            <img src="https://static-cos.ovofish.com/static/miraipip/img/decoration.b142143.png" alt="新闻装饰"
-                id="newsDecoration" class="news-decoration">
-            <div class="news-container">
-                <h2>最新动态</h2>
-                <div class="news-loading">加载中...</div> <!-- 加载提示 -->
-                <div class="news-content"></div> <!-- 新闻内容容器 -->
-            </div>
-        </div>
-
-        <!-- 第四页：暂留 -->
-        <div class="section section-4" style="background: #e7eff8;">
-            <h2>更多内容敬请期待...</h2>
-        </div>
+    <div class="download-container">
+        <a href="https://github.com/Yanam1Anna/FRAISEMOE-Addons-Installer"><h3>FRAISEMOE-Addons-Installer</h3></a>
+        <a id="github_url" class="download-link" href="#"></a>
+        <a id="mirror_url" class="download-link" href="#"></a>
+        <div id="version_info">正在获取版本信息...</div>
     </div>
+    <script>
+        // 页面加载完成后执行加载动画 （已调整部分）
+window.onload = function () {
+    setTimeout(function () {
+        setTimeout(loadingAnime1, 1000);
+        setTimeout(loadingAnime2, 2000);
+        setTimeout(loadingDisableAnime, 4000);
+        setTimeout(loadingDisable, 6000);
+    }, 100);
+};
+function loadingDisableAnime() {
+    document.querySelector('#loading').classList.add('disable');
+}
+function loadingDisable() {
+    document.querySelector('#loading').style.display = 'none';
+}
+function loadingAnime1() {
+    document.querySelector('#logo').classList.add('logomove');
+}
+function loadingAnime2() {
+    document.querySelector('#RTXT').classList.add('opcy1');
+    document.querySelector('#RTXT').classList.remove('opcy0');
+}
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadUrl = 'https://archive.ovofish.com/var/widget/api/nekopara/download.php';
+            const githubLink = document.getElementById('github_url');
+            const mirrorLink = document.getElementById('mirror_url');
+            const versionInfo = document.getElementById('version_info');
 
-    <!-- 手机端单页结构 -->
-    <div class="mobile-container" id="mobileContainer">
-        <div class="container">
-            <h2>更多内容敬请期待...</h2>
-        </div>
-    </div>
+            githubLink.textContent = "获取GitHub链接中...";
+            mirrorLink.textContent = "获取镜像链接中...";
 
-    <footer class="footer" style="align-items: center;">
-        <p>
-            <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer">
-                <img src="static/img/粤公网安备_44122402240079号.svg" alt=""></a>
-            <span style="margin-left: 50px; margin-right: 50px;">
-            <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer">
-                <img src="static/img/粤公网安备_44122402240079号.svg" alt=""></a>
-        </p>
-    </footer>
-    <script src="static/js/main.js"></script>
+            fetch(downloadUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP错误! 状态码: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.code !== 200) {
+                        throw new Error(data.msg || 'API返回非成功状态');
+                    }
+
+                    if (!data.ghurl || !data.mirror || !data.version) {
+                        throw new Error('下载链接或版本信息缺失');
+                    }
+
+                    githubLink.href = data.ghurl;
+                    githubLink.textContent = `GitHub下载 (v${data.version})`;
+
+                    mirrorLink.href = data.mirror;
+                    mirrorLink.textContent = `镜像站下载 (v${data.version})`;
+
+                    versionInfo.textContent = `当前版本: ${data.version} | 检测更新时间: ${data.updatetime}`;
+                })
+                .catch(error => {
+                    console.error('获取下载链接失败:', error);
+                    githubLink.textContent = "GitHub下载 (获取失败)";
+                    githubLink.style.color = "red";
+
+                    mirrorLink.textContent = "镜像站下载 (获取失败)";
+                    mirrorLink.style.color = "red";
+
+                    versionInfo.textContent = `错误: ${error.message}`;
+                    versionInfo.style.color = 'red';
+                });
+        });
+    </script>
 </body>
-
 </html>
